@@ -1,0 +1,95 @@
+﻿@using ApplicationCore.LoanModels;
+@model WebApp.ViewModels.LoanViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+    var loanModel = (LoanModel)ViewData["loanModel"];
+}
+
+<div class="card card-body mx-auto w-50">
+    <h1>Equity Calculator</h1>
+    
+    <div asp-validation-summary="All"></div>
+
+    <form asp-action="Index" method="POST">
+        <div class="mb-3">
+            <label asp-for="sellingPrice" class="form-label" class="input-validation-error">Selling Price</label>
+            <input asp-for="sellingPrice" type="number" class="form-control" placeholder="0.00" step=".01">
+        </div>
+        <div class="mb-3">
+            <label asp-for="reserveDate" class="form-label" class="input-validation-error">Reservation Date</label>
+            <input asp-for="reserveDate" type="date" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="equityTerm" class="form-label" class="input-validation-error">Equity Term</label>
+            <input asp-for="equityTerm" type="number" class="form-control" placeholder="0">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">GO</button>
+    </form>
+
+    @if (@loanModel != null)
+    {
+        <div class="card card-body mt-3">
+            <h2>Equity Information</h2>
+            <label class="col-form-label">Selling price: <strong>@loanModel.sellingPrice</strong></label>
+            <label class="col-form-label">Reservation Date: <strong>@loanModel.reserveDate.ToString("MMMM dd, yyyy")</strong></label>
+            <label class="col-form-label">Equity Term: <strong>@loanModel.equityTerm</strong></label>
+
+            <br/>
+
+            <h5>Details</h5>
+            @foreach (LoanDetails details in loanModel.loanDetails)
+            {
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="col col-3">Term @details.termNo</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Balance
+                            </td>
+                            <td>
+                                <strong>@details.loanBalance</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Due Date
+                            </td>
+                            <td>
+                                <strong>@details.dueDate.ToString("MMMM dd, yyyy")</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Amount
+                            </td>
+                            <td>
+                                <strong>@details.monthlyAmount</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Interest
+                            </td>
+                            <td>
+                                <strong>@details.interest</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Insurance
+                            </td>
+                            <td>
+                                <strong>@details.insurance</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    }
+</div>
