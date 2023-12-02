@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquityCalculator", "EquityCalculator\EquityCalculator.csproj", "{769FA47C-67F5-4B11-8C1C-910E209B35BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquityCalculatorAPI", "EquityCalculator\EquityCalculatorAPI.csproj", "{769FA47C-67F5-4B11-8C1C-910E209B35BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{9ED98022-B335-434B-943B-DB9940BA1565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{9ED98022-B335-434B-943B-DB9940BA1565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{F5273132-79DF-401B-9C76-852E07F7EA0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{F5273132-79DF-401B-9C76-852E07F7EA0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
