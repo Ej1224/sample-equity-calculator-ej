@@ -30,7 +30,7 @@
     {
         <div class="card card-body mt-3">
             <h2>Equity Information</h2>
-            <label class="col-form-label">Selling price: <strong>@loanModel.sellingPrice</strong></label>
+            <label class="col-form-label">Selling price: <strong>P @loanModel.sellingPrice.ToString("#,##0.00")</strong></label>
             <label class="col-form-label">Reservation Date: <strong>@loanModel.reserveDate.ToString("MMMM dd, yyyy")</strong></label>
             <label class="col-form-label">Equity Term: <strong>@loanModel.equityTerm</strong></label>
 
@@ -52,7 +52,7 @@
                                 Balance
                             </td>
                             <td class="bg-info">
-                                <strong>@details.loanBalance</strong>
+                                <strong>P @details.loanBalance.ToString("#,##0.00")</strong>
                             </td>
                         </tr>
                         <tr>
@@ -68,7 +68,7 @@
                                 Amount
                             </td>
                             <td>
-                                <strong>@details.monthlyAmount</strong>
+                                <strong>P @details.monthlyAmount.ToString("#,##0.00")</strong>
                             </td>
                         </tr>
                         <tr>
@@ -76,7 +76,7 @@
                                 Interest
                             </td>
                             <td>
-                                <strong>@details.interest</strong>
+                                <strong>P @details.interest.ToString("#,##0.00")</strong>
                             </td>
                         </tr>
                         <tr>
@@ -84,7 +84,7 @@
                                 Insurance
                             </td>
                             <td>
-                                <strong>@details.insurance</strong>
+                                <strong>P @details.insurance.ToString("#,##0.00")</strong>
                             </td>
                         </tr>
                     </tbody>
